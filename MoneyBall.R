@@ -437,7 +437,25 @@ hist(VA2016$TVelocity, breaks = 150, probability = T)
   }
   Pinterval(120,80,130,110,HR.Cop_dist)
   
+  inter.M1.a <- seq(from = min(M1), to = max(M1), by = 5)[2:20]
+  inter.M1.b <- seq(from = min(M1), to = max(M1), by = 5)[1:19]
+  inter.M2.c <- seq(from = min(M2), to = max(M2), by = 5)[2:35]
+  inter.M2.d <- seq(from = min(M2), to = max(M2), by = 5)[1:34]
   
+  inter.M1 <- seq(from = min(M1), to = max(M1), by = 5)
+  M1.comb <- combn(x = inter.M1, m = 2)
+  M1.comb <- t(M1.comb);M1.comb <- as.data.frame(M1.comb)
+  inter.M2 <- seq(from = min(M2), to = max(M2), by = 5)
+  M2.comb <- combn(x = inter.M2, m = 2)
+  M2.comb <- t(M2.comb);M2.comb <- as.data.frame(M2.comb)
+  
+  for(i in 1:nrow(M2.comb)-1 ){
+    M1.comb <- rbind(M1.comb,M1.comb)
+  }
+  
+  
+  Allabcd.table <- data.frame()
+ 
   
   
   
